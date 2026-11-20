@@ -8,7 +8,7 @@ st.caption("Created by Basavaraju")
 mykey = st.secrets("GROQ_API_KEY)
                    
 @st.cache_resource
-def intiate_rag():
+def initiate_rag():
   return load_base("01_College_Information")
  
   index, embed_model,chunk = initiate_rag()
@@ -24,7 +24,7 @@ for qa in  st.session_state.chat_hist :
 question = st.chat_input("Sak anything about SIET collage...")
 if question:
   st.session_state.chat_hist.append(
-    {"role" :"user" ,content = question})
+    {"role" :"assistant" ,"content" = question})
   with st.chat_message("user"):
     st.write(question)
 
